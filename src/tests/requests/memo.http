@@ -1,0 +1,22 @@
+ @host = http://localhost:3000
+
+################################################ create new memo
+POST {{host}}/memo HTTP/1.1
+  content-type: application/json
+
+  {"key": "value"}
+
+################################################ get memo list
+GET {{host}}/memo HTTP/1.1
+
+################################################ get memo
+GET {{host}}/memo/123 HTTP/1.1
+ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTcwOTE5MzMwM30.cvSbp9yb9WCex91IMPJtDQ1Dd_WjgQ8m7bnNITBtK_0
+################################################ update memo title
+PATCH {{host}}/memo/123 HTTP/1.1
+  content-type: application/json
+
+  {"key": "value"}
+
+################################################ delete memo
+DELETE {{host}}/memo/123 HTTP/1.1
